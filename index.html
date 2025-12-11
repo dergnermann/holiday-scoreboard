@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Woods Family Christmas Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>A Woods Family Christmas</h1>
+        <h2>Leaderboard</h2>
+    </header>
+
+    <div id="input-screen">
+        <form id="score-input-form">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Snowball Toss</th>
+                            <th>North Pole Plinko</th>
+                            <th>Reindeer Fluff Roundup</th>
+                        </tr>
+                    </thead>
+                    <tbody id="score-input-body">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="buttons-group">
+                <button type="button" id="add-player-btn">➕ Add Player</button>
+                <button type="button" id="remove-player-btn">➖ Remove Last Player</button>
+                <button type="submit" id="save-scores-btn">Save Scores</button>
+                <button type="button" id="go-to-scoreboard-btn">View Scoreboard</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="scoreboard-screen" style="display: none;">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Snowball Toss</th>
+                        <th>North Pole Plinko</th>
+                        <th>Reindeer Fluff Roundup</th>
+                        <th>Total Score</th>
+                    </tr>
+                </thead>
+                <tbody id="scoreboard-body">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="buttons-group">
+            <button type="button" id="go-to-input-btn">Back to Score Input</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script>
+        // *** IMPORTANT: REPLACE THE FIREBASE CONFIGURATION BELOW ***
+        const firebaseConfig = {
+ 	 apiKey: "AIzaSyCbhie8EZ40FPJtHi9E8gf60fI3FpVsuws",
+  	authDomain: "woods-christmas-scoreboard.firebaseapp.com",
+  	projectId: "woods-christmas-scoreboard",
+  	storageBucket: "woods-christmas-scoreboard.firebasestorage.app",
+  	messagingSenderId: "817714922220",
+  	appId: "1:817714922220:web:56af03b349c1bd44c21bc9",
+  	measurementId: "G-1HQMVDBKR9"
+        };
+        
+        // Initialize Firebase and Firestore
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        // Define the specific document reference where scores are stored
+        const scoresDocRef = db.collection("scores").doc("holiday_party_scores");
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

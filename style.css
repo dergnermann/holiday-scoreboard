@@ -1,0 +1,175 @@
+/*
+    HOLIDAY THEME STYLING
+    - Background: Dark Rich Green (#1e4620)
+    - Text: White/Off-White (#ecf0f1)
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e4620; /* Dark Rich Green */
+    color: #ecf0f1; /* Off-White Text */
+    padding: 20px;
+}
+
+/* === FUN HOLIDAY BORDER === */
+#input-screen, #scoreboard-screen {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 5px dashed #c0392b; /* Festive dashed red border */
+    border-radius: 15px;
+    background-color: rgba(44, 89, 47, 0.7);
+}
+
+
+header {
+    text-align: center;
+    color: #c0392b;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    font-family: "Ink Free", cursive, serif;
+    font-weight: bold; /* ALL INK FREE TEXT BOLDED */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3.5em; /* Adjusted slightly larger for the main title */
+}
+
+h2 {
+    color: #c0392b;
+    font-size: 1.5em; /* Two font sizes smaller than 3.5em */
+    border-bottom: 2px solid #5d8a60;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* === Table Styling and Width Adjustments === */
+.table-container {
+    max-width: 100%;
+    margin: 0 auto 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: #2c592f;
+    color: #ecf0f1;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid #5d8a60;
+    vertical-align: middle;
+}
+
+thead th {
+    background-color: #5d8a60;
+    color: white;
+    font-weight: bold;
+}
+
+/* -------------------------------------- */
+/* --- COLUMN WIDTH DEFINITIONS START --- */
+/* -------------------------------------- */
+
+/* 1. Rank Column (Scoreboard Only) */
+#scoreboard-screen table thead tr th:nth-child(1),
+#scoreboard-screen table tbody tr td:nth-child(1) {
+    width: 8%;
+    text-align: center;
+}
+
+/* 2. Name Column */
+table thead tr th:nth-child(1),
+table tbody tr td:nth-child(2) {
+    width: 30%;
+    text-align: left;
+}
+#input-screen table thead tr th:first-child,
+#input-screen table tbody tr td:first-child {
+     width: 30%;
+     text-align: left;
+}
+
+
+/* 3. Game/Score Columns */
+#input-screen table thead tr th:not(:first-child),
+#input-screen table tbody tr td:not(:first-child) {
+    width: 23.33%;
+}
+
+#scoreboard-screen table thead tr th:not(:first-child):not(:nth-child(2)),
+#scoreboard-screen table tbody tr td:not(:first-child):not(:nth-child(2)) {
+    width: 15.5%;
+}
+
+/* Make game names wrap in header cells to fit the width */
+table thead th {
+    white-space: normal;
+    word-break: break-word;
+}
+/* ------------------------------------ */
+/* --- COLUMN WIDTH DEFINITIONS END --- */
+/* ------------------------------------ */
+
+
+/* Input fields in the table */
+td input {
+    width: 90%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+}
+
+
+/* === TOP 3 PLAYER STYLING ON SCOREBOARD === */
+/* ... (Top 3 player styling remains the same) ... */
+#scoreboard-body tr td:first-child { font-weight: bold; }
+#scoreboard-body tr:nth-child(1) { background-color: rgba(255, 215, 0, 0.3); }
+#scoreboard-body tr:nth-child(1) td { font-size: 1.5em; color: gold; }
+#scoreboard-body tr:nth-child(1) td:first-child { background-color: gold; color: #333; }
+#scoreboard-body tr:nth-child(1) td:nth-child(2) { font-weight: bolder; }
+#scoreboard-body tr:nth-child(2) { background-color: rgba(192, 192, 192, 0.3); }
+#scoreboard-body tr:nth-child(2) td { font-size: 1.3em; color: silver; }
+#scoreboard-body tr:nth-child(2) td:first-child { background-color: silver; color: #333; }
+#scoreboard-body tr:nth-child(2) td:nth-child(2) { font-weight: bolder; }
+#scoreboard-body tr:nth-child(3) { background-color: rgba(205, 127, 50, 0.3); }
+#scoreboard-body tr:nth-child(3) td { font-size: 1.1em; color: #cd7f32; }
+#scoreboard-body tr:nth-child(3) td:first-child { background-color: #cd7f32; color: white; }
+#scoreboard-body tr:nth-child(3) td:nth-child(2) { font-weight: bolder; }
+#scoreboard-body tr:nth-child(n+4) td { font-size: 1em; color: #ecf0f1; }
+
+
+/* === Button Styling === */
+.buttons-group {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #c0392b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #e74c3c;
+    transform: translateY(-2px);
+}
