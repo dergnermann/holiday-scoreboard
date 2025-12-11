@@ -83,7 +83,7 @@ async function generateInputRows() {
     scoreInputBody.innerHTML = ''; 
 
     // Determine the number of rows needed (30 is the default minimum)
-    const numRows = savedData.length > 0 ? savedData.length : 30;
+    const numRows = savedData.length > 0 ? savedData.length : 10;
 
     for (let i = 0; i < numRows; i++) { 
         const row = document.createElement('tr');
@@ -243,4 +243,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Wait for rows to be generated from the database data before showing the input screen
     await generateInputRows();
     showInput();
+
 });
