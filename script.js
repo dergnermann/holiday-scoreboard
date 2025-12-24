@@ -78,12 +78,10 @@ async function saveScoresToDatabase(players) {
  * Generates input rows based on saved data, or creates 30 empty rows if no data exists.
  */
 async function generateInputRows() {
-    // Wait for players array to load from the server
     const savedData = await getScoresFromDatabase(); 
     scoreInputBody.innerHTML = ''; 
 
-    // Determine the number of rows needed (30 is the default minimum)
-    const numRows = savedData.length > 0 ? savedData.length : 10;
+    const numRows = savedData.length > 0 ? savedData.length : 30;
 
     for (let i = 0; i < numRows; i++) { 
         const row = document.createElement('tr');
@@ -92,9 +90,9 @@ async function generateInputRows() {
 
         row.innerHTML = `
             <td><input type="text" name="name-${playerIndex}" value="${player.name}" placeholder="Player ${i + 1}" required></td>
-            <td><input type="number" name="toss-${playerIndex}" value="${player.toss}" min="0" data-game="Snowball Toss"></td>
-            <td><input type="number" name="plinko-${playerIndex}" value="${player.plinko}" min="0" data-game="North Pole Plinko"></td>
-            <td><input type="number" name="fluff-${playerIndex}" value="${player.fluff}" min="0" data-game="Reindeer Fluff Roundup"></td>
+            <td><input type="number" name="toss-${playerIndex}" value="${player.toss}" min="0" data-game="The Candy Cane Shuffle"></td>
+            <td><input type="number" name="plinko-${playerIndex}" value="${player.plinko}" min="0" data-game="Candy Crane"></td>
+            <td><input type="number" name="fluff-${playerIndex}" value="${player.fluff}" min="0" data-game="Peppermint Pickup"></td>
         `;
         scoreInputBody.appendChild(row);
     }
@@ -245,3 +243,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     showInput();
 
 });
+
